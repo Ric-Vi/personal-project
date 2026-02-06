@@ -9,10 +9,26 @@ body {
   background: white;
   border-radius: 20px;
   display: inline-block;
-  padding: 40px 60px;
-  box-shadow: 0 4px 16px #2990fc;
+  padding: 60px 90px;
+  box-shadow: 0 6px 28px #2990fc;
   position: relative;
   z-index: 1;
+  max-width: 540px;
+}
+.main-gif {
+  display: block;
+  max-width: 340px;
+  width: 100%;
+  margin: 0 auto 24px auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #f69ac0;
+}
+.end-gif {
+  display: block;
+  max-width: 320px;
+  width: 100%;
+  margin: 30px auto 0 auto;
+  border-radius: 16px;
 }
 #question {
   margin-bottom: 30px;

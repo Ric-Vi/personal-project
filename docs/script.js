@@ -4,6 +4,7 @@ const noBtn = document.getElementById('noBtn');
 const question = document.getElementById('question');
 const endMsg = document.getElementById('endMsg');
 const hearts = document.getElementById('hearts');
+const mainGif = document.getElementById('mainGif');
 
 function swapButtons(clickedBtn, otherBtn, sizes) {
   clickedBtn.textContent = sizes.currentLabel;
@@ -15,7 +16,6 @@ function swapButtons(clickedBtn, otherBtn, sizes) {
 function handleClick(btnType) {
   count++;
   if (count < 5) {
-    // Usual swapping/growing logic
     if(btnType === 'no') {
       swapButtons(noBtn, yesBtn, {
         currentLabel: count === 1 ? 'Yes' :
@@ -38,7 +38,6 @@ function handleClick(btnType) {
       });
     }
   } else if (count === 5) {
-    // On 5th click: Button becomes "Big Big Big Yes!" and the other button disappears
     let clicked, other;
     if (btnType === 'yes') {
       clicked = yesBtn;
@@ -54,6 +53,7 @@ function handleClick(btnType) {
     setTimeout(() => {
       document.querySelector('.buttons').style.display = 'none';
       question.style.display = 'none';
+      mainGif.style.display = 'none'; // Hide the main GIF on last page
       endMsg.style.display = 'block';
       releaseHearts();
     }, 1000); // 1 second delay
@@ -63,7 +63,6 @@ function handleClick(btnType) {
 yesBtn.onclick = () => handleClick('yes');
 noBtn.onclick = () => handleClick('no');
 
-// Flying hearts
 function createHeart(x) {
   const heart = document.createElement('div');
   heart.className = 'heart';
